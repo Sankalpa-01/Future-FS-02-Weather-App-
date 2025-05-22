@@ -27,7 +27,7 @@ const App = () => {
 
   const fetchSuggestion = async (query) => {
     try {
-      const res = await fetch(`http://localhost:5000/weather/suggest?q=${query}`);
+      const res = await fetch(`https://weather-app-backend-q8lz.onrender.com/api/weather/suggest?q=${query}`);
       if (res.ok) {
         const data = await res.json();
         setSuggestion(data);
@@ -73,7 +73,7 @@ const App = () => {
     if (!city.trim()) {
       return setError('Please enter a valid city name');
     }
-    await fetchWeatherData(`http://localhost:5000/api/weather/city?q=${city.trim()}`);
+    await fetchWeatherData(`https://weather-app-backend-q8lz.onrender.com/api/weather/city?q=${city.trim()}`);
   };
 
   const getWeatherCondition = () =>
@@ -85,7 +85,7 @@ const App = () => {
     };
 
   const handleFavoriteCityClick = (selectedCity) => {
-    fetchWeatherData(`http://localhost:5000/api/weather/city?q=${selectedCity}`, selectedCity);
+    fetchWeatherData(`https://weather-app-backend-q8lz.onrender.com/api/weather/city?q=${selectedCity}`, selectedCity);
   };
 
   const handleAddToFavorites = () => {
@@ -120,7 +120,7 @@ const App = () => {
                       key={`${s.lat}-${s.lon}`}
                       onClick={() =>
                         fetchWeatherData(
-                          `http://localhost:5000/weather/coords?lat=${s.lat}&lon=${s.lon}`,
+                          `https://weather-app-backend-q8lz.onrender.com/api/weather/coords?lat=${s.lat}&lon=${s.lon}`,
                           `${s.name}, ${s.country}${s.state ? `, ${s.state}` : ''}`
                         )
                       }
