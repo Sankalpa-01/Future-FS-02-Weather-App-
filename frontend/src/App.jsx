@@ -124,7 +124,7 @@ const App = () => {
                           `${s.name}, ${s.country}${s.state ? `, ${s.state}` : ''}`
                         )
                       }
-                      className="block w-full text-left px-4 py-2 text-sm hover:bg-blue-700 bg-transparent text-white"
+                      className="block w-full text-left px-4 py-2 text-sm hover:bg-blue-700 bg-transparent text-black"
                     >
                       {s.name}, {s.country}
                       {s.state ? `, ${s.state}` : ''}
